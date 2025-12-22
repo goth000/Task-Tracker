@@ -47,12 +47,12 @@ todo-tracker/
 ---
 
 ## Сборка и запуск
-
+```
 ### Windows (MinGW)
 
 g++ src/TAINTED.cpp -o todo.exe -std=c++17 -O2
 ./todo.exe
-
+```
 ---
 
 ### Visual Studio
@@ -110,4 +110,5 @@ g++ src/TAINTED.cpp -o todo.exe -std=c++17 -O2
 ## Автор
 Александр
 Итоговая лабораторная работа по C++
+
 
