@@ -15,7 +15,7 @@
 }
 ]
 
-text
+
 
 ## Сборка и запуск
 
@@ -23,7 +23,7 @@ text
 g++ src/lab5_Danil.cpp -o todo.exe -std=c++17 -O2
 ./todo.exe
 
-text
+
 
 ### Visual Studio
 1. Открой `src/lab5_Danil.cpp`
@@ -42,7 +42,7 @@ text
 Удалить задачу №1
 ​
 
-text
+
 
 ## Меню программы
 1 - создать задачу
@@ -52,7 +52,7 @@ text
 5 - отчёт о просроченных задачах
 6 - просмотр всех задач
 
-text
+
 
 ## Структура проекта
 lab5-todo-tracker/
@@ -63,7 +63,7 @@ lab5-todo-tracker/
 ├── docs/Implementation_Plan.md
 └── tests/
 
-text
+
 
 ## Автор
 **Александр**  
