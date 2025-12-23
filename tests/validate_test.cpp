@@ -1,25 +1,19 @@
-/**
- * @file test_task_manager.cpp
- * @brief Unit-тесты для Task Manager (лабораторная работа)
- * @author [Your Name]
- * @date 2025-12-23
- * @version 1.0
- */
+
 
 #include <gtest/gtest.h>
 #include <vector>
 #include <string>
-#include "task_manager.h"  // предполагаем, что код вынесен в заголовок
+#include "task_manager.h"  
 
 using namespace std;
 
-// Глобальные тестовые данные
+
 struct TestCase {
     string input;
     vector<task> expected;
 };
 
-// ===== ТЕСТЫ ДЛЯ ВСПОМОГАТЕЛЬНЫХ ФУНКЦИЙ =====
+
 
 TEST(DateUtilsTest, IsLeapYear) {
     EXPECT_TRUE(isLeapYear(2024));   // високосный
@@ -55,7 +49,7 @@ TEST(JsonUtilsTest, EscapeJson) {
     EXPECT_EQ(escapeJson("\\\\double\\"), "\\\\\\\\double\\\\");
 }
 
-// ===== ТЕСТЫ ДЛЯ JSON ПАРСИНГА =====
+
 
 TEST(ReadFileTest, EmptyFile) {
     vector<task> tasks;
@@ -93,7 +87,7 @@ TEST(ReadFileTest, InvalidJson) {
     EXPECT_LE(tasks.size(), 2);  // некоторые задачи могут быть пропущены
 }
 
-// ===== ТЕСТЫ ДЛЯ СОЗДАНИЯ И РЕДАКТИРОВАНИЯ =====
+
 
 TEST(CreateTaskTest, ValidInput) {
     task t;
@@ -118,7 +112,7 @@ TEST(RefactorTaskTest, PriorityValidation) {
     EXPECT_TRUE(valid.count("low"));
 }
 
-// ===== ТЕСТЫ ДЛЯ ФИЛЬТРОВ =====
+
 
 TEST(PrintFiltersTest, GroupFilter) {
     vector<task> tasks = {
@@ -150,7 +144,7 @@ TEST(PrintFiltersTest, OverdueFilter) {
     EXPECT_EQ(overdue_count, 1);
 }
 
-// ===== ИНТЕГРАЦИОННЫЕ ТЕСТЫ =====
+
 
 TEST(IntegrationTest, FullCycle) {
     vector<task> tasks;
@@ -177,7 +171,7 @@ TEST(IntegrationTest, FullCycle) {
     EXPECT_EQ(saved_tasks.back().title, "Новая задача");
 }
 
-// ===== ТЕСТЫ ДЛЯ MAIN МЕНЮ =====
+
 
 TEST(MenuTest, IdGeneration) {
     vector<task> empty_list;
@@ -202,7 +196,7 @@ TEST(MenuTest, DeleteTask) {
     EXPECT_EQ(tasks[0].id, "2");
 }
 
-// ===== ТЕСТЫ ДЛЯ КРАЕВЫХ СЛУЧАЕВ =====
+
 
 TEST(EdgeCasesTest, EmptyTaskList) {
     vector<task> empty;
