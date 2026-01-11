@@ -66,19 +66,21 @@ task-tracker/
 ```
 Описание полей JSON
 ```
-Поле	Тип	Описание
-id	string	Уникальный идентификатор
-title	string	Название задачи
-due	string	Дата (YYYY-MM-DD)
-priority	string	low, mid, high
-group	string	Группа задачи
-done	boolean	Статус выполнения
+| Поле     | Тип     | Описание                               |
+|----------|---------|----------------------------------------|
+| id       | string  | Уникальный идентификатор               |
+| title    | string  | Название задачи                        |
+| due      | string  | Дата (YYYY-MM-DD)                      |
+| priority | string  | low, mid, high                         |
+| group    | string  | Группа задачи                          |
+| done     | boolean | Статус выполнения                      |
 ```
 3. Описание ключевых алгоритмов
-```
-3.1 Валидация данных
-Функция isValidDate(day, month, year) проверяет:
 
+3.1 Валидация данных
+
+Функция isValidDate(day, month, year) проверяет:
+```
 диапазоны дат;
 
 корректность дней в месяцах;
@@ -86,10 +88,10 @@ done	boolean	Статус выполнения
 високосные годы.
 
 Возвращает true, если дата валидна, иначе false.
-```
+
 
 3.2 Парсинг JSON
-```
+```cpp
 void readFile(const string& name, vector<task>& list);
 ```
 Алгоритм:
@@ -114,6 +116,7 @@ O(n) — линейный поиск
 ├── поиск задач с group == searchGroup
 └── вывод результата
 ```
+```
 Поиск просроченных задач
 
 
@@ -121,9 +124,10 @@ O(n) — линейный поиск
 ├── done == false
 ├── due < today
 └── вывод с подсчётом
+```
 3.4 Генератор тестовых данных
 
-```
+```cpp
 void generateTaskJsonFiles(int fileCount, int errorPercent);
 ```
 Процесс генерации:
@@ -145,7 +149,7 @@ errorPercent — вероятность создания ошибочной за
 ```
 4. Интерфейсы функций и примеры использования
 Основные функции
-```
+```cpp
 void readFile(const string&, vector<task>&);
 void saveAllTasks(const string&, const vector<task>&);
 
@@ -161,7 +165,7 @@ void Start(vector<task>&);
 void AdminMode();
 ```
 Пример main
-```
+```cpp
 int main() {
     setlocale(LC_ALL, "Ru-ru");
     vector<task> list_of_tasks;
