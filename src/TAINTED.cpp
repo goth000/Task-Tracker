@@ -4,7 +4,12 @@
 #include <vector>
 #include <map>
 #include <unordered_set>
-#include <algorithm> // для std::remove
+#include <limits>
+#include <algorithm>
+#include <random>
+#include <ctime>
+#include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -83,6 +88,188 @@ string escapeJson(const string& s) {
 //     },
 //     ...
 // ]
+// ===== Генератор тестовых JSON-файлов для задач =====
+
+const vector<string> GEN_TITLES = {
+    "Finish_report", "Fix_bugs", "Write_tests", "Refactor_code",
+    "Team_meeting", "Buy_groceries", "Call_client", "Send_email",
+    "Update_docs", "Plan_sprint", "Read_article", "Watch_lecture",
+    "Do_homework", "Clean_room", "Workout", "Pay_bills",
+    "Deploy_build", "Code_review", "Learn_Cpp", "Backup_data"
+};
+
+const vector<string> GEN_GROUPS = {
+    "Work", "Home", "Study", "Sport",
+    "Urgent", "LowPrio", "Fun", "Family",
+    "Finance", "Other"
+};
+
+const vector<string> GEN_PRIORITIES = { "low", "mid", "high" };
+
+// случайная дата в диапазоне ±90 дней от 2026-01-11
+string genRandomDate(mt19937& gen) {
+    // базовая дата
+    int year = 2026, month = 1, day = 11;
+
+    uniform_int_distribution<int> offsetDist(-90, 90);
+    int offset = offsetDist(gen);
+
+    // преобразуем в "число дней с начала года" грубо
+    // (делаем простым способом, без time_t, чтобы не тянуть <chrono>)
+    auto daysInMonth = [&](int y, int m) {
+        int d[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+        if (m == 2 && isLeapYear(y)) d[1] = 29;
+        return d[m - 1];
+        };
+
+    // сдвиг дней вперед/назад
+    int d = day + offset;
+    int m = month;
+    int y = year;
+    while (d > daysInMonth(y, m)) {
+        d -= daysInMonth(y, m);
+        m++;
+        if (m > 12) { m = 1; y++; }
+    }
+    while (d <= 0) {
+        m--;
+        if (m <= 0) { m = 12; y--; }
+        d += daysInMonth(y, m);
+    }
+
+    ostringstream oss;
+    oss << setw(4) << setfill('0') << y << "-"
+        << setw(2) << setfill('0') << m << "-"
+        << setw(2) << setfill('0') << d;
+    return oss.str();
+}
+
+string genRandomTitle(mt19937& gen) {
+    uniform_int_distribution<int> dist(0, (int)GEN_TITLES.size() - 1);
+    return GEN_TITLES[dist(gen)];
+}
+
+string genRandomGroup(mt19937& gen) {
+    uniform_int_distribution<int> dist(0, (int)GEN_GROUPS.size() - 1);
+    return GEN_GROUPS[dist(gen)];
+}
+
+string genRandomPriority(mt19937& gen) {
+    uniform_int_distribution<int> dist(0, (int)GEN_PRIORITIES.size() - 1);
+    return GEN_PRIORITIES[dist(gen)];
+}
+
+bool genRandomDone(mt19937& gen) {
+    uniform_int_distribution<int> dist(0, 3); // 0..3
+    return dist(gen) == 0; // 25% true
+}
+
+// основной генератор
+// fileCount  - сколько файлов создать (до 100000)
+// errorPercent - процент задач с ошибками (0..100)
+void generateTaskJsonFiles(int fileCount, int errorPercent) {
+    mt19937 gen(static_cast<unsigned int>(time(nullptr)));
+    uniform_int_distribution<int> tasksPerFileDist(10, 100);
+    uniform_int_distribution<int> errorChanceDist(0, 99);
+
+    cout << "\n=== Генерация тестовых JSON-файлов задач ===\n";
+    cout << "Файлов: " << fileCount << ", процент ошибочных задач: "
+        << errorPercent << "%\n\n";
+
+    for (int f = 0; f < fileCount; ++f) {
+        int tasksCount = tasksPerFileDist(gen);
+        vector<task> tmp;
+        tmp.reserve(tasksCount);
+
+        for (int i = 0; i < tasksCount; ++i) {
+            task T;
+            T.id = to_string(i + 1);
+
+            bool makeError = (errorPercent > 0) &&
+                (errorChanceDist(gen) < errorPercent);
+
+            if (!makeError) {
+                // валидная задача
+                T.title = genRandomTitle(gen);
+                T.due = genRandomDate(gen);
+                T.priority = genRandomPriority(gen);
+                T.group = genRandomGroup(gen);
+            }
+            else {
+                // ошибочная задача: разные виды ошибок
+                int errType = errorChanceDist(gen) % 5;
+                switch (errType) {
+                case 0: // пустой title
+                    T.title = "";
+                    T.due = genRandomDate(gen);
+                    T.priority = genRandomPriority(gen);
+                    T.group = genRandomGroup(gen);
+                    break;
+                case 1: // неверная дата
+                    T.title = genRandomTitle(gen);
+                    T.due = "2026-13-45"; // заведомо неверная
+                    T.priority = genRandomPriority(gen);
+                    T.group = genRandomGroup(gen);
+                    break;
+                case 2: // неверный приоритет
+                    T.title = genRandomTitle(gen);
+                    T.due = genRandomDate(gen);
+                    T.priority = "URGENT"; // не low/mid/high
+                    T.group = genRandomGroup(gen);
+                    break;
+                case 3: // пустая группа
+                    T.title = genRandomTitle(gen);
+                    T.due = genRandomDate(gen);
+                    T.priority = genRandomPriority(gen);
+                    T.group = "";
+                    break;
+                case 4: // всё плохо
+                    T.title = "";
+                    T.due = "invalid";
+                    T.priority = "unknown";
+                    T.group = "";
+                    break;
+                }
+            }
+
+            T.done = genRandomDone(gen);
+            tmp.push_back(T);
+        }
+
+        // сохраняем в файл формата, как у saveAllTasks
+        string filename = "data_" + to_string(f) + ".json";
+        ofstream file(filename);
+        if (!file.is_open()) {
+            cerr << "Не удалось открыть файл " << filename << " для записи\n";
+            continue;
+        }
+
+        file << "[\n";
+        for (size_t i = 0; i < tmp.size(); ++i) {
+            const task& t = tmp[i];
+            file << "    {\n";
+            file << "        \"id\": \"" << escapeJson(t.id) << "\",\n";
+            file << "        \"title\": \"" << escapeJson(t.title) << "\",\n";
+            file << "        \"due\": \"" << escapeJson(t.due) << "\",\n";
+            file << "        \"priority\": \"" << escapeJson(t.priority) << "\",\n";
+            file << "        \"group\": \"" << escapeJson(t.group) << "\",\n";
+            file << "        \"done\": " << (t.done ? "true" : "false") << "\n";
+            file << "    }";
+            if (i + 1 != tmp.size()) file << ",";
+            file << "\n";
+        }
+        file << "]\n";
+        file.close();
+
+        if ((f + 1) % 10 == 0 || f + 1 == fileCount) {
+            cout << "Создано файлов: " << (f + 1) << " / " << fileCount << "\n";
+        }
+    }
+
+    cout << "\nГенерация завершена.\n";
+    cout << "Файлы: data_0.json, data_1.json, ... data_" << (fileCount - 1) << ".json\n";
+}
+
 
 void readFile(const string& name, vector<task>& list) {
     ifstream file(name);
@@ -467,6 +654,33 @@ void RefactorTask(task& T) {
     }
 }
 
+// ===== Режим администратора (генератор) =====
+void AdminMode() {
+    int fileCount;
+    int errorPercent;
+
+    cout << "\n=== Режим администратора: генератор JSON-файлов ===\n";
+    cout << "Сколько файлов сгенерировать? (1..100000): ";
+    if (!(cin >> fileCount) || fileCount < 1 || fileCount > 100000) {
+        cout << "Некорректное число файлов.\n";
+        // очистим состояние, чтобы меню потом жило
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        return;
+    }
+
+    cout << "Процент ошибочных задач в каждом файле? (0..100): ";
+    if (!(cin >> errorPercent) || errorPercent < 0 || errorPercent > 100) {
+        cout << "Некорректный процент.\n";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        return;
+    }
+
+    generateTaskJsonFiles(fileCount, errorPercent);
+}
+
+
 // ===== Главное меню =====
 
 void Start(vector<task>& list_of_tasks) {
@@ -480,6 +694,7 @@ void Start(vector<task>& list_of_tasks) {
         cout << "\t4 - фильтр по группе" << endl;
         cout << "\t5 - отчет о просроченных задачах" << endl;
         cout << "\t6 - просмотр всех задач" << endl;
+        cout << "\t7 - режим разработчика" << endl;
         cout << "\tЛюбой другой символ - выход" << endl;
 
         if (!(cin >> choose)) {
@@ -566,6 +781,10 @@ void Start(vector<task>& list_of_tasks) {
                 break;
             }
             PrintTask(list_of_tasks);
+            break;
+        }
+        case 7: {
+            AdminMode();
             break;
         }
         default:
