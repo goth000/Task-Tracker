@@ -1,0 +1,82 @@
+[
+    {
+        "id": "1",
+        "title": "Write_tests",
+        "due": "2026-13-45",
+        "priority": "mid",
+        "group": "Family",
+        "done": false
+    },
+    {
+        "id": "2",
+        "title": "Read_article",
+        "due": "2026-02-05",
+        "priority": "low",
+        "group": "Fun",
+        "done": false
+    },
+    {
+        "id": "3",
+        "title": "Clean_room",
+        "due": "2026-03-06",
+        "priority": "low",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "4",
+        "title": "Call_client",
+        "due": "2026-03-08",
+        "priority": "low",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "5",
+        "title": "",
+        "due": "invalid",
+        "priority": "unknown",
+        "group": "",
+        "done": true
+    },
+    {
+        "id": "6",
+        "title": "Clean_room",
+        "due": "2025-11-21",
+        "priority": "low",
+        "group": "Sport",
+        "done": false
+    },
+    {
+        "id": "7",
+        "title": "Fix_bugs",
+        "due": "2025-11-03",
+        "priority": "high",
+        "group": "Work",
+        "done": false
+    },
+    {
+        "id": "8",
+        "title": "Refactor_code",
+        "due": "2025-10-22",
+        "priority": "high",
+        "group": "Sport",
+        "done": false
+    },
+    {
+        "id": "9",
+        "title": "Finish_report",
+        "due": "2025-11-21",
+        "priority": "mid",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "10",
+        "title": "Pay_bills",
+        "due": "2026-02-07",
+        "priority": "mid",
+        "group": "Study",
+        "done": false
+    }
+]

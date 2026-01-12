@@ -1,0 +1,250 @@
+[
+    {
+        "id": "1",
+        "title": "Read_article",
+        "due": "2025-12-06",
+        "priority": "low",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "2",
+        "title": "Fix_bugs",
+        "due": "2025-12-21",
+        "priority": "low",
+        "group": "Urgent",
+        "done": false
+    },
+    {
+        "id": "3",
+        "title": "Plan_sprint",
+        "due": "2025-11-06",
+        "priority": "mid",
+        "group": "Fun",
+        "done": false
+    },
+    {
+        "id": "4",
+        "title": "Team_meeting",
+        "due": "2026-01-20",
+        "priority": "high",
+        "group": "Finance",
+        "done": false
+    },
+    {
+        "id": "5",
+        "title": "Workout",
+        "due": "2025-11-11",
+        "priority": "high",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "6",
+        "title": "Send_email",
+        "due": "2025-12-21",
+        "priority": "high",
+        "group": "Finance",
+        "done": false
+    },
+    {
+        "id": "7",
+        "title": "Call_client",
+        "due": "2026-03-25",
+        "priority": "mid",
+        "group": "Sport",
+        "done": true
+    },
+    {
+        "id": "8",
+        "title": "Backup_data",
+        "due": "2025-12-08",
+        "priority": "high",
+        "group": "LowPrio",
+        "done": false
+    },
+    {
+        "id": "9",
+        "title": "Read_article",
+        "due": "2025-12-16",
+        "priority": "low",
+        "group": "Home",
+        "done": false
+    },
+    {
+        "id": "10",
+        "title": "Call_client",
+        "due": "2025-11-01",
+        "priority": "URGENT",
+        "group": "Urgent",
+        "done": false
+    },
+    {
+        "id": "11",
+        "title": "Backup_data",
+        "due": "2025-10-23",
+        "priority": "mid",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "12",
+        "title": "Fix_bugs",
+        "due": "2026-01-29",
+        "priority": "high",
+        "group": "Sport",
+        "done": false
+    },
+    {
+        "id": "13",
+        "title": "Buy_groceries",
+        "due": "2026-04-03",
+        "priority": "mid",
+        "group": "Other",
+        "done": true
+    },
+    {
+        "id": "14",
+        "title": "Write_tests",
+        "due": "2026-01-07",
+        "priority": "low",
+        "group": "Urgent",
+        "done": false
+    },
+    {
+        "id": "15",
+        "title": "Call_client",
+        "due": "2026-01-15",
+        "priority": "high",
+        "group": "Finance",
+        "done": false
+    },
+    {
+        "id": "16",
+        "title": "Plan_sprint",
+        "due": "2026-03-24",
+        "priority": "high",
+        "group": "Sport",
+        "done": false
+    },
+    {
+        "id": "17",
+        "title": "Watch_lecture",
+        "due": "2026-13-45",
+        "priority": "low",
+        "group": "Sport",
+        "done": true
+    },
+    {
+        "id": "18",
+        "title": "",
+        "due": "invalid",
+        "priority": "unknown",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "19",
+        "title": "Buy_groceries",
+        "due": "2026-01-29",
+        "priority": "high",
+        "group": "",
+        "done": true
+    },
+    {
+        "id": "20",
+        "title": "",
+        "due": "2025-11-06",
+        "priority": "high",
+        "group": "Family",
+        "done": false
+    },
+    {
+        "id": "21",
+        "title": "Fix_bugs",
+        "due": "2026-04-09",
+        "priority": "URGENT",
+        "group": "Work",
+        "done": true
+    },
+    {
+        "id": "22",
+        "title": "Read_article",
+        "due": "2025-11-16",
+        "priority": "high",
+        "group": "Family",
+        "done": false
+    },
+    {
+        "id": "23",
+        "title": "Buy_groceries",
+        "due": "2026-01-24",
+        "priority": "high",
+        "group": "Family",
+        "done": false
+    },
+    {
+        "id": "24",
+        "title": "Refactor_code",
+        "due": "2026-03-11",
+        "priority": "URGENT",
+        "group": "Family",
+        "done": true
+    },
+    {
+        "id": "25",
+        "title": "Code_review",
+        "due": "2026-02-16",
+        "priority": "low",
+        "group": "Home",
+        "done": false
+    },
+    {
+        "id": "26",
+        "title": "Deploy_build",
+        "due": "2025-11-15",
+        "priority": "low",
+        "group": "Family",
+        "done": false
+    },
+    {
+        "id": "27",
+        "title": "Clean_room",
+        "due": "2026-02-15",
+        "priority": "high",
+        "group": "Fun",
+        "done": false
+    },
+    {
+        "id": "28",
+        "title": "Write_tests",
+        "due": "2025-10-19",
+        "priority": "low",
+        "group": "Sport",
+        "done": false
+    },
+    {
+        "id": "29",
+        "title": "Pay_bills",
+        "due": "2025-12-05",
+        "priority": "mid",
+        "group": "Work",
+        "done": false
+    },
+    {
+        "id": "30",
+        "title": "Team_meeting",
+        "due": "2026-04-10",
+        "priority": "high",
+        "group": "Study",
+        "done": true
+    },
+    {
+        "id": "31",
+        "title": "Workout",
+        "due": "2026-13-45",
+        "priority": "high",
+        "group": "Family",
+        "done": true
+    }
+]

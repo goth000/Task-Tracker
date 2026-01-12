@@ -1,0 +1,394 @@
+[
+    {
+        "id": "1",
+        "title": "Plan_sprint",
+        "due": "2026-02-04",
+        "priority": "low",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "2",
+        "title": "",
+        "due": "2025-10-15",
+        "priority": "low",
+        "group": "Urgent",
+        "done": false
+    },
+    {
+        "id": "3",
+        "title": "Call_client",
+        "due": "2026-01-15",
+        "priority": "high",
+        "group": "LowPrio",
+        "done": true
+    },
+    {
+        "id": "4",
+        "title": "",
+        "due": "2026-02-17",
+        "priority": "low",
+        "group": "Home",
+        "done": false
+    },
+    {
+        "id": "5",
+        "title": "Read_article",
+        "due": "2026-02-14",
+        "priority": "mid",
+        "group": "Other",
+        "done": false
+    },
+    {
+        "id": "6",
+        "title": "Refactor_code",
+        "due": "2025-11-22",
+        "priority": "low",
+        "group": "Other",
+        "done": false
+    },
+    {
+        "id": "7",
+        "title": "Plan_sprint",
+        "due": "2025-11-18",
+        "priority": "mid",
+        "group": "Other",
+        "done": true
+    },
+    {
+        "id": "8",
+        "title": "Read_article",
+        "due": "2026-03-20",
+        "priority": "low",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "9",
+        "title": "Call_client",
+        "due": "2026-03-02",
+        "priority": "high",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "10",
+        "title": "Write_tests",
+        "due": "2026-01-27",
+        "priority": "high",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "11",
+        "title": "",
+        "due": "invalid",
+        "priority": "unknown",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "12",
+        "title": "Backup_data",
+        "due": "2026-03-10",
+        "priority": "mid",
+        "group": "Sport",
+        "done": true
+    },
+    {
+        "id": "13",
+        "title": "Team_meeting",
+        "due": "2025-12-31",
+        "priority": "high",
+        "group": "Family",
+        "done": false
+    },
+    {
+        "id": "14",
+        "title": "Plan_sprint",
+        "due": "2026-02-19",
+        "priority": "mid",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "15",
+        "title": "Code_review",
+        "due": "2026-01-17",
+        "priority": "low",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "16",
+        "title": "Plan_sprint",
+        "due": "2026-03-28",
+        "priority": "low",
+        "group": "Urgent",
+        "done": false
+    },
+    {
+        "id": "17",
+        "title": "Team_meeting",
+        "due": "2025-11-03",
+        "priority": "low",
+        "group": "Finance",
+        "done": false
+    },
+    {
+        "id": "18",
+        "title": "Call_client",
+        "due": "2025-10-20",
+        "priority": "high",
+        "group": "Family",
+        "done": false
+    },
+    {
+        "id": "19",
+        "title": "Plan_sprint",
+        "due": "2026-02-08",
+        "priority": "mid",
+        "group": "Finance",
+        "done": false
+    },
+    {
+        "id": "20",
+        "title": "Update_docs",
+        "due": "2026-13-45",
+        "priority": "mid",
+        "group": "Sport",
+        "done": true
+    },
+    {
+        "id": "21",
+        "title": "Do_homework",
+        "due": "2025-11-19",
+        "priority": "high",
+        "group": "LowPrio",
+        "done": false
+    },
+    {
+        "id": "22",
+        "title": "Learn_Cpp",
+        "due": "2026-02-07",
+        "priority": "low",
+        "group": "Other",
+        "done": true
+    },
+    {
+        "id": "23",
+        "title": "Clean_room",
+        "due": "2025-10-28",
+        "priority": "high",
+        "group": "Urgent",
+        "done": false
+    },
+    {
+        "id": "24",
+        "title": "Deploy_build",
+        "due": "2026-02-04",
+        "priority": "low",
+        "group": "Finance",
+        "done": true
+    },
+    {
+        "id": "25",
+        "title": "",
+        "due": "2025-11-03",
+        "priority": "mid",
+        "group": "Other",
+        "done": false
+    },
+    {
+        "id": "26",
+        "title": "Pay_bills",
+        "due": "2026-02-08",
+        "priority": "high",
+        "group": "LowPrio",
+        "done": false
+    },
+    {
+        "id": "27",
+        "title": "",
+        "due": "2025-11-07",
+        "priority": "mid",
+        "group": "Home",
+        "done": false
+    },
+    {
+        "id": "28",
+        "title": "Refactor_code",
+        "due": "2026-01-07",
+        "priority": "mid",
+        "group": "Urgent",
+        "done": false
+    },
+    {
+        "id": "29",
+        "title": "Workout",
+        "due": "2026-03-30",
+        "priority": "high",
+        "group": "LowPrio",
+        "done": false
+    },
+    {
+        "id": "30",
+        "title": "",
+        "due": "invalid",
+        "priority": "unknown",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "31",
+        "title": "Code_review",
+        "due": "2025-11-30",
+        "priority": "mid",
+        "group": "Study",
+        "done": true
+    },
+    {
+        "id": "32",
+        "title": "Send_email",
+        "due": "2026-02-14",
+        "priority": "URGENT",
+        "group": "Study",
+        "done": true
+    },
+    {
+        "id": "33",
+        "title": "Call_client",
+        "due": "2026-02-03",
+        "priority": "low",
+        "group": "Fun",
+        "done": false
+    },
+    {
+        "id": "34",
+        "title": "Team_meeting",
+        "due": "2025-10-30",
+        "priority": "mid",
+        "group": "",
+        "done": true
+    },
+    {
+        "id": "35",
+        "title": "Update_docs",
+        "due": "2026-01-07",
+        "priority": "low",
+        "group": "Urgent",
+        "done": true
+    },
+    {
+        "id": "36",
+        "title": "Do_homework",
+        "due": "2025-12-13",
+        "priority": "mid",
+        "group": "Work",
+        "done": false
+    },
+    {
+        "id": "37",
+        "title": "",
+        "due": "2025-11-23",
+        "priority": "low",
+        "group": "Study",
+        "done": false
+    },
+    {
+        "id": "38",
+        "title": "Pay_bills",
+        "due": "2025-12-11",
+        "priority": "URGENT",
+        "group": "Other",
+        "done": true
+    },
+    {
+        "id": "39",
+        "title": "",
+        "due": "invalid",
+        "priority": "unknown",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "40",
+        "title": "Buy_groceries",
+        "due": "2026-04-06",
+        "priority": "mid",
+        "group": "",
+        "done": true
+    },
+    {
+        "id": "41",
+        "title": "Clean_room",
+        "due": "2026-01-19",
+        "priority": "low",
+        "group": "Sport",
+        "done": false
+    },
+    {
+        "id": "42",
+        "title": "Plan_sprint",
+        "due": "2026-03-26",
+        "priority": "URGENT",
+        "group": "Finance",
+        "done": true
+    },
+    {
+        "id": "43",
+        "title": "",
+        "due": "invalid",
+        "priority": "unknown",
+        "group": "",
+        "done": false
+    },
+    {
+        "id": "44",
+        "title": "Call_client",
+        "due": "2026-13-45",
+        "priority": "mid",
+        "group": "Other",
+        "done": false
+    },
+    {
+        "id": "45",
+        "title": "Send_email",
+        "due": "2026-13-45",
+        "priority": "mid",
+        "group": "Work",
+        "done": false
+    },
+    {
+        "id": "46",
+        "title": "",
+        "due": "2026-02-06",
+        "priority": "high",
+        "group": "Family",
+        "done": true
+    },
+    {
+        "id": "47",
+        "title": "Plan_sprint",
+        "due": "2026-01-14",
+        "priority": "high",
+        "group": "Family",
+        "done": false
+    },
+    {
+        "id": "48",
+        "title": "Write_tests",
+        "due": "2026-02-14",
+        "priority": "URGENT",
+        "group": "Fun",
+        "done": false
+    },
+    {
+        "id": "49",
+        "title": "Learn_Cpp",
+        "due": "2026-02-22",
+        "priority": "high",
+        "group": "Work",
+        "done": false
+    }
+]
