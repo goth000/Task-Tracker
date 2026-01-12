@@ -18,12 +18,13 @@ todo-tracker/
 │ └── TAINTED.cpp # Главная программа (меню, логика todo)
 ├── include/ # Заголовки (опционально)
 ├── tests/ # Самотесты и бенчмарки
-│ └── test_todo.cpp # Тесты (в разработке)
+│ └── validate_tests.cpp
 ├── data/ # Примеры входных данных
 │ └── data.json # Набор задач для демонстрации
 └── docs/ # Документация
 ├── Implementation_Plan.md # План реализации
 └── bench.md # Отчёт по производительности
+└── report.md # Отчёт по лабораторной
 ```
 
 
@@ -50,8 +51,7 @@ todo-tracker/
 ```
 ### Windows (MinGW)
 
-g++ src/TAINTED.cpp -o todo.exe -std=c++17 -O2
-./todo.exe
+скачайте .exe файл и запустите его
 ```
 ---
 
@@ -109,6 +109,7 @@ g++ src/TAINTED.cpp -o todo.exe -std=c++17 -O2
 
 ## Автор
 Александр К
+
 
 
 
