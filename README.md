@@ -51,7 +51,7 @@ todo-tracker/
 ```
 ### Windows (MinGW)
 
-скачайте .exe файл и запустите его
+скачайте ConsoleApplicationFile.exe файл и запустите его
 ```
 ---
 
@@ -109,6 +109,7 @@ todo-tracker/
 
 ## Автор
 Александр К
+
 
 
 
